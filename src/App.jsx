@@ -17,14 +17,21 @@ if (pathArr.length === 3) {
 
 //const WEB_URL = process.env.REACT_APP_MODE === "production" ? `wss://${process.env.REACT_APP_DOMAIN_NAME}/` : `ws://${loc.hostname}:3005/blackjack`;
 const WEB_URL = `wss://mbj.usdtpoker.club/`;
+//const WEB_URL = `ws://${loc.hostname}:8092`;
 
 // (A) LOCK SCREEN ORIENTATION
 
+const doSign = () => {
+    
+    return <>$</>;
+};
 const doCurrency = (value) => {
     var val = value?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
     return val;
 };
 const doCurrencyMil = (value, fix) => {
+    var val = value?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    return val;
     var val;
     if (value < 1000000) {
         val = doCurrency(parseFloat(value / 1000).toFixed(fix || fix === 0 ? fix : 0)) + "K";
@@ -435,9 +442,9 @@ const BlackjackGame = () => {
                                 </h2>
                                 <h3>{game.id}</h3>
                                 <p>
-                                    Min Bet: {doCurrency(game.min)}
+                                    Min Bet: {doCurrency(game.min)}{doSign()}
                                     <br />
-                                    Max Bet: {doCurrency(game.min * 5)}
+                                    Max Bet: {doCurrency(game.min * 5)}{doSign()}
                                 </p>
                                 <button>Join Now</button>
                             </li>
@@ -635,7 +642,7 @@ const BlackjackGame = () => {
                                                                             socket.send(JSON.stringify({ method: "bet", amount: bet, theClient: userData, gameId: gameData.id, seat: pNumber }));
                                                                         }}
                                                                     >
-                                                                        {doCurrencyMil(bet)}
+                                                                        {doCurrencyMil(bet)}{doSign()}
                                                                     </button>
                                                                 </span>
                                                             );
@@ -643,7 +650,7 @@ const BlackjackGame = () => {
                                                             return (
                                                                 <span key={i} className={gameTimer < 2 && gameTimer >= -1 && gameData.gameStart ? "animate__zoomOut animate__animated" : ""}>
                                                                     <button className="betButtons  noclick noclick-nohide animate__faster animate__animated animate__zoomInUp" id={"chip" + i} value={bet}>
-                                                                        {doCurrencyMil(bet)}
+                                                                        {doCurrencyMil(bet)}{doSign()}
                                                                     </button>
                                                                 </span>
                                                             );
@@ -670,7 +677,7 @@ const BlackjackGame = () => {
                                                                             }
                                                                         }}
                                                                     >
-                                                                        {doCurrencyMil(bet)}
+                                                                        {doCurrencyMil(bet)}{doSign()}
                                                                     </button>
                                                                 </span>
                                                             ))}
@@ -679,7 +686,7 @@ const BlackjackGame = () => {
                                                             {player?.sideppx > 0 && <div className="bets-side-win animate__animated animate__fadeInUp">x{player?.sideppx}</div>}
                                                             {sidePPPlayer ? (
                                                                         <button className="betButtons  noclick animate__animated animate__rotateIn" id={"chip" + _renge.findIndex((bet) => bet === sidePPPlayer / 1000)}>
-                                                                            {doCurrencyMil(sidePPPlayer)}
+                                                                            {doCurrencyMil(sidePPPlayer)}{doSign()}
                                                                         </button>
                                                                     ) : (
                                                                         <button onClick={() => $("#sidebetbtn").trigger("click")} className={player?.sideppx > 0 ? "betButtons place winner  animate__faster animate__animated animate__zoomInUp " : "betButtons place  animate__faster animate__animated animate__zoomInUp "}>
@@ -699,7 +706,7 @@ const BlackjackGame = () => {
                                                     inverted
                                                     trigger={
                                                         <button className="betButtons  animate__animated animate__zoomInDown" style={{ animationDelay: (pNumber + 1) * 50 + "ms", left: pNumber * 5, top: (pNumber * -15) }} id={"chip" + _renge.findIndex((bet) => bet == player.amount / 1000)}>
-                                                            {doCurrencyMil(player.amount)}
+                                                            {doCurrencyMil(player.amount)}{doSign()}
                                                         </button>
                                                     }
                                                     content={
@@ -707,7 +714,7 @@ const BlackjackGame = () => {
                                                             <img src={"/imgs/avatars/" + player?.avatar + ".webp"} style={{ height: 30, marginRight: 10, float: "left" }} />
                                                             {player.nickname}
                                                             <br />
-                                                            <small>{doCurrencyMil(player.amount)}</small>
+                                                            <small>{doCurrencyMil(player.amount)}{doSign()}</small>
                                                         </div>
                                                     }
                                                 />
@@ -734,7 +741,7 @@ const BlackjackGame = () => {
                                                                             }
                                                                         }}
                                                                     >
-                                                                        {doCurrencyMil(bet)}
+                                                                        {doCurrencyMil(bet)}{doSign()}
                                                                     </button>
                                                                 </span>
                                                             ))}
@@ -742,7 +749,7 @@ const BlackjackGame = () => {
                                                             {player?.side213x > 0 && <div className="bets-side-win animate__animated animate__fadeInUp">x{player?.side213x}</div>}
                                                             {side213layer ? (
                                                                         <button className="betButtons  noclick animate__animated animate__rotateIn" id={"chip" + _renge.findIndex((bet) => bet === side213layer / 1000)}>
-                                                                            {doCurrencyMil(side213layer)}
+                                                                            {doCurrencyMil(side213layer)}{doSign()}
                                                                         </button>
                                                                     ) : (
                                                                         <button onClick={() => $("#sidebetbtn").trigger("click")} className={player?.side213x > 0 ? "betButtons place winner animate__faster animate__animated animate__zoomInUp" : "betButtons place  animate__faster animate__animated animate__zoomInUp "}>
@@ -761,7 +768,7 @@ const BlackjackGame = () => {
                                                      on='hover'
                                                     trigger={
                                                         <button className="betButtons  animate__animated animate__zoomInDown" style={{ animationDelay: (pNumber + 1) * 50 + "ms", left: pNumber * -5, top: pNumber * -15 }} id={"chip" + _renge.findIndex((bet) => bet == player.amount / 1000)}>
-                                                            {doCurrencyMil(player.amount)}
+                                                            {doCurrencyMil(player.amount)}{doSign()}
                                                         </button>
                                                     }
                                                     content={
@@ -769,7 +776,7 @@ const BlackjackGame = () => {
                                                             <img src={"/imgs/avatars/" + player?.avatar + ".webp"} style={{ height: 30, marginRight: 10, float: "left" }} />
                                                             {player.nickname}
                                                             <br />
-                                                            <small>{doCurrencyMil(player.amount)}</small>
+                                                            <small>{doCurrencyMil(player.amount)}{doSign()}</small>
                                                         </div>
                                                     }
                                                 />
@@ -848,12 +855,12 @@ const BlackjackGame = () => {
                                                     {player.isDouble ? (
                                                         <>
                                                             <button className="betButtons  noclick animate__animated animate__rotateIn" id={"chip" + _renge.findIndex((bet) => bet === player.bet / 2000)}>
-                                                                {doCurrencyMil(player.bet)}
+                                                                {doCurrencyMil(player.bet)}{doSign()}
                                                             </button>
                                                         </>
                                                     ) : (
                                                         <button className="betButtons  noclick animate__animated animate__rotateIn" id={"chip" + _renge.findIndex((bet) => bet === player.bet / 1000)}>
-                                                            {doCurrencyMil(player.bet)}
+                                                            {doCurrencyMil(player.bet)}{doSign()}
                                                         </button>
                                                     )}
                                                 </div>
