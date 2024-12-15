@@ -23,7 +23,7 @@ const WEB_URL = `wss://mbj.royale777.vip/`;
 
 const doSign = () => {
     
-    return <>$</>;
+    return <></>;
 };
 const doCurrency = (value) => {
     var val = value?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
@@ -442,9 +442,9 @@ const BlackjackGame = () => {
                                 </h2>
                                 <h3>{game.id}</h3>
                                 <p>
-                                    Min Bet: {doCurrency(game.min)}{doSign()}
+                                    Min Bet: {doCurrency(game.min)}<small>$</small>
                                     <br />
-                                    Max Bet: {doCurrency(game.min * 5)}{doSign()}
+                                    Max Bet: {doCurrency(game.min * 5)}<small>$</small>
                                 </p>
                                 <button>Join Now</button>
                             </li>
