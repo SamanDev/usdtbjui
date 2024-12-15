@@ -16,7 +16,7 @@ if (pathArr.length === 3) {
 //console.log(_auth);
 
 //const WEB_URL = process.env.REACT_APP_MODE === "production" ? `wss://${process.env.REACT_APP_DOMAIN_NAME}/` : `ws://${loc.hostname}:3005/blackjack`;
-const WEB_URL = `wss://mbj.usdtpoker.club/`;
+const WEB_URL = `wss://mbj.royale777.vip/`;
 //const WEB_URL = `ws://${loc.hostname}:8092`;
 
 // (A) LOCK SCREEN ORIENTATION
