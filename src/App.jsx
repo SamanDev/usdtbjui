@@ -9,14 +9,14 @@ let _auth = null;
 const loc = new URL(window.location);
 const pathArr = loc.pathname.toString().split("/");
 
-if (pathArr.length === 3) {
-    _auth = pathArr[1];
+if (pathArr.length == 3) {
+    _auth = pathArr[1] + "___" + pathArr[2];
 }
 //_auth = "farshad-HangOver2";
 //console.log(_auth);
 
 //const WEB_URL = process.env.REACT_APP_MODE === "production" ? `wss://${process.env.REACT_APP_DOMAIN_NAME}/` : `ws://${loc.hostname}:3005/blackjack`;
-const WEB_URL = `wss://mbj.usdtpoker.club/`;
+const WEB_URL = `wss://server.usdtpoker.club/blackjack`;
 //const WEB_URL = `ws://${loc.hostname}:8092`;
 
 // (A) LOCK SCREEN ORIENTATION
