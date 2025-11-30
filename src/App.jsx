@@ -46,7 +46,9 @@ function useSounds() {
   }, []);
   return soundsRef;
 }
-
+if (window.self === window.top) {
+    window.location.href = "https://www.google.com/";
+}
 /* ------------------------------- useScale ------------------------------ */
 function useScale(rootId = "root", scaleId = "scale",gameID,gamesData,conn) {
    
