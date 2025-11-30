@@ -15,14 +15,16 @@ html {
 }
 
 body {
-  background: radial-gradient(#38833c, #1e421f);
-  background: radial-gradient(#723883, #1e2b42);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background:  #262a2b ;
+ 
+font-size: 22px !important;
   padding: 0;
   margin: 0;
   opacity: 1;
+  transition: background .5s ease;
+
 }
+
 
 #table-graphics {
   position: absolute;
@@ -55,9 +57,7 @@ body {
   --info-rules-width: -492px;
 }
 
-.hide-element {
-  
-}
+
 
 .player-left {
   opacity: 0.3;
@@ -453,10 +453,15 @@ body {
 }
 
 .game-room {
-  height: 100%;
-  transition: all .1s ease;
-  min-height: 750px !important;
-  transform-origin: top;
+  
+  opacity: 0;
+  transition: transform .5s ease, opacity .1s ease;
+  height: 800px !important;
+  
+}
+.game-room[style] {
+  opacity: 1;
+  
 }
 
 #users-online-box {
@@ -615,7 +620,7 @@ body {
 
 #leave-button {
   position: absolute;
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: 90px;
   height: 30px;
   
@@ -628,17 +633,11 @@ body {
   /* Standard syntax */
 }
 #leave-button .button {
-  width: 120px !important;
+  width: 180px !important;
 }
-.modal.tiny *{
-  font-size: 96% !important;
-}
-.myloading,.myloading *:not(i):not(br){
-  position: absolute !important;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+
+.myloading{
+
   background:transparent !important
 }
 #leave-table {
@@ -780,11 +779,14 @@ body {
 }
 .bets-side-win{
   color: chartreuse;
-    font-size: 20px;
+    font-size: 30px;
     position: absolute;
-    margin-top: -24px;
+    margin-top: -34px;
     width: 100%;
     text-align: center;
+}
+.winner .betButtons.noclick{
+  box-shadow: #00de00 0px 0px 10px 4px;
 }
 
 #players-timer-container {
@@ -802,21 +804,37 @@ body {
   z-index: 10;
 }
 #root {
-  height: 100vh;
+  background: radial-gradient(#00000000, #000000bd) !important;
+  height: 100dvh;
    
     width: 100vw;
     overflow: hidden;
 }
-
-#root > div{
-  height: 750px;
+#root *{
+  user-select: none;
+}
+.bx-left{
+    transform: rotate(-25deg);
+    transform-origin: center;
+        height: 90px;
+    width: 100%;
+    position: absolute;
+}
+.bx-right{
+    transform: rotate(25deg);
+    transform-origin: center;
+       height: 90px;
+    width: 100%;
+    position: absolute;
+}
+#root > div {
+  height: 800px;
   position: relative;
   width: 1400px;
-  top: 10px;
-  
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  transform-origin: top center;
+  transform: translateX(-50%) translateY(-50%);
+  transform-origin: center;
 }
 .players-timer {
   position: relative;
@@ -889,14 +907,14 @@ body {
 .player-sum {
   position: absolute;
   margin: 0 auto;
-  padding: 4px 8px;
-  top: -45px;
+  padding: 8px 8px;
+  top: -70px;
   color: #e0e000;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
   display: inline-block;
   pointer-events: none;
-  z-index: 15;
+  z-index: 150;
   transform: translateX(-50%) !important;
   transition: 100ms ease-in-out;
   text-align: center;
@@ -904,7 +922,7 @@ body {
   left: 50%;
   /* allow the width to be calculated dynamically */
   width: auto;
-  font-size: 30px;
+  font-size: 50px;
 }
 
 .player-result {
@@ -917,7 +935,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-left: -27px;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   background: rgba(0, 0, 0, 0.8);
   border: 2px solid black;
@@ -948,7 +966,7 @@ body {
   text-shadow: 0 0 4px #007a00;
 }
 .player-result.result-draw,.player-result.result-lose{
-font-size: 13px;
+font-size: 18px;
 }
 .result-blackjack {
   border: 2px solid gold;
@@ -1193,8 +1211,8 @@ color: white;
 text-align: center;
 border-radius: 10px;
 font-family: "Play", sans-serif;
--webkit-user-select: none;
-top:10px;
+user-select: none;
+top:20px;
 right: 90px;
 }
 
@@ -1202,7 +1220,7 @@ right: 90px;
   background-color: rgba(0, 0, 0, 0.458);
   padding: 4px;
   border: 1px solid white;
-  width: 155px;
+  width: 215px;
   border-radius: 10px;
   margin-left: 10px;
   margin-bottom: 8px;
@@ -1241,7 +1259,7 @@ right: 90px;
 }
 #dealer #dealerSum {
   position: absolute;
-  padding: 4px 8px;
+  padding: 8px 8px;
   top: 140px;
   color: #e0e000;
   background: rgba(0, 0, 0, 0.8);
@@ -1257,7 +1275,7 @@ right: 90px;
   left: 50%;
   /* allow the width to be calculated dynamically */
   width: auto;
-  font-size: 30px;
+  font-size: 50px;
 }
 #dealer .dealer-cards {
   display: flex;
@@ -1588,7 +1606,7 @@ opacity: .5;
   padding: 0;
   list-style: none;
   text-align: center;
-transform-origin: top;
+
 }
 .tilesWrap li {
   display: inline-block;

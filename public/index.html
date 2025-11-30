@@ -1,86 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta charset="UTF-8">
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-   
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Play&family=Roboto&family=Rubik&display=swap"
-      rel="stylesheet">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Luckiest+Guy&family=Ultra&display=swap"
-      rel="stylesheet">
-      <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link rel="stylesheet" href="/css/dist/style.css?v=29">
 
-    <title>BlackJack MultiPlayer</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="turn">
-      <div class="cardRotate">
-        <h1>Ready to play?</h1>
-        <p>Please rotate your device!</p>
-        <div class="animation">
-        
-       
-        <svg version="1.1" class="phone phone--landscape" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 408 845" style="enable-background:new 0 0 408 845;" xml:space="preserve">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Play&family=Roboto&family=Rubik&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Luckiest+Guy&family=Ultra&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/dist/style.css?v=30">
+
+  <title>BlackJack MultiPlayer</title>
+</head>
+
+<body style="background: rgb(60, 66, 68);">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="turn">
+    <div class="cardRotate">
+      <h1>Ready to play?</h1>
+      <p>Please rotate your device!</p>
+      <div class="animation">
+
+
+        <svg version="1.1" class="phone phone--landscape" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 408 845"
+          style="enable-background:new 0 0 408 845;" xml:space="preserve">
           <path class="phone--body" d="M363.5,9.5c18.3,0,33.3,14.9,33.3,33.3v723.5c0,18.3-14.9,33.3-33.3,33.3H42c-18.3,0-33.3-14.9-33.3-33.3
             V42.8C8.8,24.5,23.7,9.5,42,9.5H363.5 M363.5-0.5H42C18.2-0.5-1.2,19-1.2,42.8v723.5c0,23.8,19.5,43.3,43.3,43.3h321.5
-            c23.8,0,43.3-19.5,43.3-43.3V42.8C406.8,19,387.3-0.5,363.5-0.5L363.5-0.5z"/>
-          <path class="phone--screen" d="M372.8,78.5v620h-340v-620H372.8 M382.8,68.5h-360v640h360V68.5L382.8,68.5z"/>
-      </svg>
+            c23.8,0,43.3-19.5,43.3-43.3V42.8C406.8,19,387.3-0.5,363.5-0.5L363.5-0.5z" />
+          <path class="phone--screen" d="M372.8,78.5v620h-340v-620H372.8 M382.8,68.5h-360v640h360V68.5L382.8,68.5z" />
+        </svg>
       </div>
-      </div>
-
-      
     </div>
-    <div id="root"></div>
-    <div class="hidden">
-      <script>
-        var images = new Array()
-        var _lvl=[];
+
+
+  </div>
+  <div id="root"></div>
+  <div class="hidden">
+    <script>
+      if (window.self === window.top && window.location.href.indexOf("localhost") == -1) {
+        window.location.href = "https://www.google.com/";
+      }
+      var images = new Array()
+      var _lvl = [];
       _lvl.push("/imgs/chips/Casino_Chip_Brown.svg")
       _lvl.push("/imgs/chips/Casino_Chip_Orange.svg")
       _lvl.push("/imgs/chips/Casino_Chip_Purple.svg")
-     
+
       for (let index = 1; index < 91; index++) {
-          _lvl.push("/imgs/avatars/lvl" + index + ".webp")
-        
-          }
-          for (i = 0; i < _lvl.length; i++) {
-					images[i] = new Image()
-					images[i].src = _lvl[i]
-				}
-			
-			function preload() {
-				for (i = 0; i < preload.arguments.length; i++) {
-					images[i+1+_lvl.length] = new Image()
-					images[i+1+_lvl.length].src = preload.arguments[i]
-				}
-			}
-     
-			preload(
+        _lvl.push("/imgs/avatars/lvl" + index + ".webp")
+
+      }
+      for (i = 0; i < _lvl.length; i++) {
+        images[i] = new Image()
+        images[i].src = _lvl[i]
+      }
+
+      function preload() {
+        for (i = 0; i < preload.arguments.length; i++) {
+          images[i + 1 + _lvl.length] = new Image()
+          images[i + 1 + _lvl.length].src = preload.arguments[i]
+        }
+      }
+
+      preload(
         "/imgs/Heart2.svg",
         "/imgs/Heart3.svg",
         "/imgs/Heart4.svg",
@@ -136,8 +133,9 @@
 
         "/imgs/Back0.svg"
       )
-	</script>
-    </div>
-   
-  </body>
+    </script>
+  </div>
+
+</body>
+
 </html>

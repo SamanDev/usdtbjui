@@ -1,8 +1,8 @@
 import { Dimmer, Loader, Icon, IconGroup, Segment } from "semantic-ui-react";
 
 const LoaderExampleLoader = (prop) => {
-    return(<Segment basic className="myloading">
-        <Dimmer active>
+    return(<div><div className="game-room" id="scale">
+        <Dimmer active className="myloading">
             {prop.errcon ? (
                 <div>
                     <IconGroup size="huge" style={{ marginTop: "10%" }}>
@@ -19,6 +19,6 @@ const LoaderExampleLoader = (prop) => {
                 <Loader size="huge" />
             )}
         </Dimmer>
-    </Segment>)};
+    </div></div>)};
 
 export default LoaderExampleLoader;
