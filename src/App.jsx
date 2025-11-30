@@ -316,8 +316,8 @@ const BlackjackGame = () => {
 
   const defaultHost = typeof window !== "undefined" ? window.location.hostname : "localhost";
   const protocol = defaultHost === "localhost" ? "ws" : "ws"; // keep ws; use wss if server supports
-  const WEB_URL = `${protocol}://${defaultHost}:8100/blackjack`;
-//const WEB_URL = `wss://server.usdtpoker.club/blackjack`;
+  //const WEB_URL = `${protocol}://${defaultHost}:8100/blackjack`;
+const WEB_URL = `wss://server.usdtpoker.club/blackjack`;
 
   const [gamesData, setGamesData] = useState([]);
   const [gamesDataLive, setGamesDataLive] = useState([]);
